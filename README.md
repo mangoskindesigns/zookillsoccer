@@ -1,6 +1,6 @@
 # es6-boilerplate
 ---------------------
-
+test 
 A basic project to get started with es6 using babel, node-sass and browserify. It uses browserify to watch for changes in your JavaScript and SASS (scss) files. If you save a change to JavaScript, browserify will automatically run the Babel transpiler, converting any ES6 code you write into more compatible ES5 code. Likewise, if you save a change to a .scss file, browserify will run the Sass program, converting Sass data to pure CSS.
 
 Inspiration: http://www.sitepoint.com/setting-up-es6-project-using-babel-browserify/
@@ -13,17 +13,17 @@ Inspiration: http://www.sitepoint.com/setting-up-es6-project-using-babel-browser
    - Go sudo su and type password.
    - Run "npm install grunt -g"
    - Type "exit" (takes you out of sudo)
-   - After the install is complete, run "grunt" in that window. The Terminal 
-     will watch for file changes, and automaticall re-compile your JavaScript 
+   - After the install is complete, run "grunt" in that window. The Terminal
+     will watch for file changes, and automaticall re-compile your JavaScript
      written in ES6 down to ES5, which most browsers need.
 3. In Terminal Window #2:
-   - Run "npm start" in Terminal window #2. 
+   - Run "npm start" in Terminal window #2.
    - The web server should start up.
 
 ## Using the boilerplate
 1. Make a copy so you have it for future projects
 2. Edit the JavaScript in the /modules folder
-3. Each time you save, you should see some action in Terminal Window #1 as 
+3. Each time you save, you should see some action in Terminal Window #1 as
    your JavaScript is "transpiled" and copied to the /dist folder
 
 ## Adding a Git Repository, and uploading
