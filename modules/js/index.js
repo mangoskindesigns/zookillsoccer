@@ -1,73 +1,170 @@
-/** 
- * Create ES6 Classes.
- * To make this work, you must be running the Babel transpiler,
- * and watching for changes in this file with browserify. Two
- * Terminal windows need to be open:
- * 1. one window where you typed the command "grunt"
- * 2. one window where you typed the command "npm start"
+8/**
+ * Create the game. Import the primary classes, and 'composit'
+ * the overall Game object out of instances of the classes.
  */
+import GamePiece from './GamePiece.js';
+import Screen from './Screen.js';
 
-class GamePiece {
+//Screen Inheritence
+import StartScreen from './StartScreen.js';
+import GameScreen from './GameScreen.js';
+import EndScreen from './EndScreen.js';
 
-    constructor (credentials) {
-    	//TODO: use super();
-        this.name = credentials.name;
-        this.uuid = this.setId();
-    }
+//Info Inheritence
+import Info from './Info.js';
+import Text from './Text.js';
+import DynamicText from './DynamicText.js';
+import Score from './Score.js';
+import StaticText from './StaticText.js';
+import Identity from './Identity.js';
+import Instructions from './Instructions.js';
 
-    /**
-     * Generate a unique ID for every game object.
-     * @link http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
-     */
-    setId () {
-        var d = new Date().getTime();
-        if (window.performance && typeof window.performance.now === "function") {
-            d += performance.now(); //use high-precision timer if available
-        }
-        var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-            var r = (d + Math.random()*16)%16 | 0;
-            d = Math.floor(d/16);
-            return (c=='x' ? r : (r&0x3|0x8)).toString(16);
-        });
-        return uuid;
-    }
+//Character Inheritence
+import Character from './Character.js';
+import Trump from './Trump.js';
+import Player from './Player';
+import Animal from './Animal.js';
+import Health from './Health.js';
+import Lion from './Lion.js';
+import Tiger from './Tiger.js';
+import Bear from './Bear.js';
+import Gorilla from './Gorilla.js';
 
-    /**
-     * Return the given name of this object.
-     */
-    getName () {
-        return this.name;
-    }
-
-    /**
-     * Return the unique id of this object.
-     */
-    getId () {
-        return this.uuid;
-    }
-}
+//Area Inheritence
+import Area from './Area.js';
+import Cage from './Cage.js';
+import AnimalArea from './AnimalArea.js';
+import PlayerArea from './PlayerArea.js';
 
 /**
- * Arena objects derive directly from generic GamePiece
- */
-class Arena extends GamePiece {
-    constructor(credentials) {
-        super(credentials);
-    }
-}
-
-/**
- * Sample file configuration.
+ * Set up the game.
  */
 var config = {
-    name:'Forest Trump or Donald Gump',
-    enrollmentNo:11115078
+    name:'Forest Trump or Donald Gump rulz'
 }
 
-// Make some test game objects
-var x = new GamePiece(config);
-console.log(x.getName());
+///////TESTBED FOR ALL OBJECTS
 
-// Make a test Arena object.
-var y = new Arena(cred);
-console.log(y.getName());
+//Make some test game objects
+var game = new GamePiece(config);
+console.log(game.getName());
+
+///////////////////TEST SCREEN/////////////////////////
+var configScreen1 = {
+  name: 'Opening Screen'
+}
+
+/////////////////////////Test Screen
+var myScreen = new Screen(configScreen1);
+console.log(myScreen.getName());
+
+/////////////////////////Test StartScreen
+var myStartScreen = new StartScreen({name:"StartScreen"});
+console.log(myStartScreen.getName());
+
+/////////////////////////Test GameScreen
+var myGameScreen = new GameScreen({name:"GameScreen"});
+console.log(myGameScreen.getName());
+
+/////////////////////////Test EndScreen
+var myEndScreen = new EndScreen({name:"EndScreen"});
+console.log(myEndScreen.getName());
+
+///////////////////TEST INFO/////////////////////////
+
+/////////////////////////Test Info
+var myInfo = new Info({name:"Info"});
+console.log(myInfo.getName());
+
+/////////////////////////Test Text
+var myText = new Text({name:"Text"});
+console.log(myText.getName());
+
+/////////////////////////Test DynamicText
+var myDynamicText = new DynamicText({name:"DynamicText"});
+console.log(myDynamicText.getName());
+
+/////////////////////////Test Score
+var myScore = new Score({name:"Score"});
+console.log(myScore.getName());
+
+/////////////////////////Test StaticText
+var myStaticText = new StaticText({name:"StaticText"});
+console.log(myStaticText.getName());
+
+/////////////////////////Test Identity
+var myIdentity = new Identity({name:"Identity"});
+console.log(myIdentity.getName());
+
+/////////////////////////Test Instructions
+var myInstructions = new Instructions({name:"Instructions"});
+console.log(myInstructions.getName());
+
+/////////////////////////TEST CHARACTER////////////////////////
+
+/////////////////////////Test Gorilla
+var myGorilla = new Gorilla ({name:"Spunky"});
+console.log(myGorilla.getName());
+
+/////////////////////////Test Bear
+var myBear = new Bear ({name:"Scary"});
+console.log(myBear.getName());
+
+/////////////////////////Test Tiger
+var myTiger = new Tiger ({name:"Hear me Roar"});
+console.log(myTiger.getName());
+
+/////////////////////////Test Lion
+var myLion = new Lion ({name:"King of the Jungle"});
+console.log(myLion.getName());
+
+/////////////////////////Test Health
+var myHealth = new Health ({name:"Health"});
+console.log(myHealth.getName());
+
+/////////////////////////Test Animal
+var myAnimal = new Animal ({name:"Animal"});
+console.log(myAnimal.getName());
+
+/////////////////////////Test Player
+var myPlayer = new Player ({name:"Player"});
+console.log(myPlayer.getName());
+
+/////////////////////////Test Trump
+var myTrump = new Trump ({name:"Trump"});
+console.log(myTrump.getName());
+
+/////////////////////////Test Character
+var myCharacter = new Character ({name:"Character"});
+console.log(myCharacter.getName());
+
+/////////////////////////TEST AREA////////////////////////
+
+/////////////////////////Test Area
+var myArea = new Area ({name:"Area"});
+console.log(myArea.getName());
+
+/////////////////////////Test Cage
+var myCage = new Cage ({name:"Cage"});
+console.log(myCage.getName());
+
+/////////////////////////Test AnimalArea
+var myAnimalArea = new AnimalArea ({name:"AnimalArea"});
+console.log(myAnimalArea.getName());
+
+/////////////////////////Test PlayerArea
+var myPlayerArea = new PlayerArea ({name:"PlayerArea"});
+console.log(myPlayerArea.getName());
+
+//////////// no longer needed var config2 = {
+//////////// no longer needed  name: 'Thud Mutton, Esq'
+//////////// no longer needed };
+
+//////////// no longer needed var something = new GamePiece(config2)
+//////////// no longer needed console.log(something.getName())
+
+//var area = new Area(config);
+//console.log(area.getName());
+
+//var character = new Character(config);
+//var player = new Player(config);
