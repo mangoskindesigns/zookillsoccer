@@ -1,15 +1,15 @@
-/**
-*Bear.js
-*
-*@inherits Animal, Character, GamePiece
-*/
+/** 
+ * Bear.js
+ * A Tiger, who tries to get the Player.
+ * @inherits GamePiece, Character
+ */
+ import GamePiece from './GamePiece.js';
+ import Character from './Character.js';
+ import Animal from './Animal.js';
 
-import GamePiece from './GamePiece.js';
-import Character from './Character.js';
-import Animal from './Animal.js';
+ export default class Bear extends Animal {
 
-export default class Bear extends Animal {
-  constructor (config) {
-    super(config);
-  }
-};
+ 	constructor (config) {
+ 		super (config);
+ 	}
+ }

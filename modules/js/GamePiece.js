@@ -34,6 +34,13 @@ export default class GamePiece {
     }
 
     /**
+    *Return the CLass name of this object.
+    */
+    getClass(){
+      return this.constructor.name; /* ES6 feature */
+    }
+
+    /**
      * Return the given name of this object.
      */
     getName () {
@@ -46,4 +53,32 @@ export default class GamePiece {
     getId () {
         return this.uuid;
     }
+
+    /**
+      *Return the bounding box (Rect) for this object onscreen.
+      */
+    getCollisionRect (){
+
+    }
+
+    /**
+      *Return the box (Rect) for a container object.
+      */
+    getBoundsRect (){
+
+    }
+
+    /**
+      *Update the object. Override in sub-classes.
+      */
+    update (){
+
+      }
+
+      /**
+      *Draw the object. Override in sub-classes.
+      */
+    draw (){
+
+      }
 }

@@ -1,14 +1,15 @@
-/**
-*Health.js
-*Creates a text-type Info object
-*@inherits Character, GamePiece
-*/
+/** 
+ * Health.js
+ * The critters that Trump tries to stop from getting the Player.
+ * @inherits GamePiece, Character
+ */
+ import GamePiece from './GamePiece.js';
+ import Character from './Character.js';
 
-import GamePiece from './GamePiece.js';
-import Character from './Character.js';
+ export default class Health extends Character {
 
-export default class Health extends Character {
-  constructor (config) {
-    super(config);
-  }
-};
+ 	constructor (config) {
+ 		super (config);
+ 	}
+
+ }

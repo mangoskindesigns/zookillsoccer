@@ -1,13 +1,21 @@
 /**
-*Character.js
-*
-*@inherits GamePiece.js
-*/
+ * Character.js
+ * Game-generated or user avatars
+ * @inherits GamePiece
+ */
+ import GamePiece from './GamePiece.js';
 
-import GamePiece from './GamePiece.js';
+ export default class Character extends GamePiece {
 
-export default class Character extends GamePiece {
-  constructor (config) {
-    super(config);
+ 	constructor (config) {
+ 		super (config);
+ 	}
+
+  update (){
+
   }
-};
+
+  draw () {
+    
+  }
+ }

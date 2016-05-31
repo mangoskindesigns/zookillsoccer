@@ -1,14 +1,14 @@
-/**
-*Player.js
-*Creates a text-type Info object
-*@inherits Character, GamePiece
-*/
+/** 
+ * Player.js
+ * User-controlled Character
+ * @inherits GamePiece, Character
+ */
+ import GamePiece from './GamePiece.js';
+ import Character from './Character.js';
 
-import GamePiece from './GamePiece.js';
-import Character from './Character.js';
+ export default class Player extends Character {
 
-export default class Player extends Character {
-  constructor (config) {
-    super(config);
-  }
-};
+ 	constructor (config) {
+ 		super (config);
+ 	}
+ }

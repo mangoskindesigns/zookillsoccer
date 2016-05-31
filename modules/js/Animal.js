@@ -1,14 +1,14 @@
 /**
-*Animal.js
-*Creates a text-type Info object
-*@inherits Character, GamePiece
-*/
+ * Animal.js
+ * The critters that Trump tries to stop from getting the Player.
+ * @inherits GamePiece, Character
+ */ 
+ import GamePiece from './GamePiece.js';
+ import Character from './Character.js';
 
-import GamePiece from './GamePiece.js';
-import Character from './Character.js';
+ export default class Animal extends Character {
 
-export default class Animal extends Character {
-  constructor (config) {
-    super(config);
-  }
-};
+ 	constructor (config) {
+ 		super (config);
+ 	}
+ }
